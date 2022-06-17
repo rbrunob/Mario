@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-sky: linear-gradient(#87ceeb, #e0f6ff);
+    --color-grass: 15px solid rgb(37, 165, 20);
+    --points-color: black;
+}
+
+.game-board {
+    width: 100%;
+    height: 100vh;
+    border-bottom: var( --color-grass);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-sky);
+}
+
+.pipe {
+    position: absolute;
+    width: 80px;
+    bottom: 0;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.clounds {
+    width: 600px;
+    position: absolute;
+    animation: clounds 5s infinite linear;
+}
+
+.points {
+    position: absolute;
+    font-size: 3rem;
+    opacity: .9;
+    color: var(--points-color);
+    z-index: 2;
+    padding: 5px;
+    background: white;
+    right: 0%;
+    text-align: center;
+    font-family: monospace;
+    top: 1%;
+    border-radius: 10px 0px 0px 80px;
+    width: 13%;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 181.5px;
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes clounds {
+    from {
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+}
